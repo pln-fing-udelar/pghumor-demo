@@ -58,7 +58,9 @@ footer{
 }
 
 dl{
-  width: 170px;
+  width: 163px;
+  margin: 0px;
+  padding: 0px;
 }
 
 dt {
@@ -66,7 +68,7 @@ dt {
   display: inline;
   font-weight: bold;
   color: black;
-  min-width: 125px;
+  min-width: 120px;
 }
 
 dd {
