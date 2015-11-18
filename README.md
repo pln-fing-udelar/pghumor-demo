@@ -1,8 +1,10 @@
-# Prueba de concepto
+# pghumor Demo
 
-## Configurar usuario de la base
+Demo of tweets detected as humorous by the project pghumor
 
-Crear el archivo `config/secrets.yml` con el contenido (reemplazando por la contraseña del usuario de la base de datos):
+## Set up the database
+
+Create the file `config/secrets.yml` with the content (replacing with the password of the user of the used database):
 
 ```yml
 development:
@@ -18,21 +20,20 @@ production:
   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 ```
 
-Para generar los valores de `secret_key_base` en `development` y `test`, ejecutar:
+To generate the values of `secret_key_base` in `development` and `test`, run:
 
 ```bash
 bundle exec rake secret
 ```
 
-Autorizar usuario `pghumor` a la base:
+Grant access to `pghumor` to the database:
 
 ```sql
 GRANT ALL PRIVILEGES ON prueba_concepto_development.* TO 'pghumor'@'%' WITH GRANT OPTION;
 ```
 
-## Agarrar cambios mientras se deja corriendo el server
+## Catch changes while running the server
 
 ```bash
 bundle exec rerun "bundle exec rails server"
 ```
-
